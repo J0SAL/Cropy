@@ -158,22 +158,4 @@ def fert_recommend():
 
 # ===============================================================================================
 if __name__ == '__main__':
-    app.run(debug=True)
-
-
-'''
-
-<center>
-    <p>
-        The P value of your soil is <b>Low</b><br>
-        <i>Please consider the following suggestions:</i>
-    </p>
-</center>
-<ol>
-    <li><b>Bone Meal</b>- a fast acting source that is made from ground animal bones which is rich in phosphorous.</li>
-
-    <li>Rock phosphate – a slower acting source where the soil needs to convert the rock phosphate into phosphorous that the plants can use.</li>
-
-    <li>Phosphorus Fertilizers – applying a fertilizer with a high phosphorous content in the NPK ratio (example: 10-20-10, 20 being phosphorous percentage).</li>
-</ol>  
-'''
+    app.run(debug=False)
