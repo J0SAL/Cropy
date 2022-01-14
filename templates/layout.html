@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{ title }}</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- icon -->
+	<link rel="icon" href="{{ url_for('static', filename='images/logo_cropy.png') }}" type="image/png" />
+	<!-- css files -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+	<!-- //css files -->
+
+
+	<script type="text/JavaScript" src="{{ url_for('static', filename='scripts/state_city.js') }}"></script>
+
+
+	</script>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark navbar-default ">
+		<div class="container">
+			<a class="navbar-brand" href="{{ url_for('home') }}">
+				<img src="{{ url_for('static', filename='images/logo_cropy1.png') }}" style="width: 70px; height: 50px; border-radius: 20%;" alt=""> CROPY
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li id="link1" class="nav-item active">
+						<a class="nav-link" href="{{ url_for('home') }}">Home</a>
+					</li>
+					<li id="link2" class="nav-item">
+						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
+					</li>
+					<li id="link3" class="nav-item">
+						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	{% block body %} {% endblock %}
+
+	<!-- footer -->
+	<footer class="text-center bg-dark text-light">
+		<div class="container py-md-3">
+			<h2 class="">
+				<a class="text-light" style="text-decoration: none!important;" href="{{ url_for('home') }}" >
+					Cropy
+				</a>
+			</h2>
+			<div class="w3l-copy text-center">
+				<p class="text-da">An Environmental Project </p>
+			</div>
+			<p>&copy; Copyright 2021 by Joy Almeida</p>
+			
+		</div>
+	</footer>
+
+	<script type="text/JavaScript" src="{{ url_for('static', filename='scripts/index.js') }}"></script>
+
+</body>
+
+</html>

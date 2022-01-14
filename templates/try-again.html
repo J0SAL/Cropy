@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+<div class="result-body">
+    <div class="result-div">
+      <center>
+        <img id="result-img" src="{{ url_for('static', filename='images/find.jpg') }}">
+        <h4><b>Opps!<br>Something went wrong.</b></h4>
+        <a href="{{ url_for('home') }}"><br/>
+          <button class="btn btn-danger shadow-none rounded-9"><b>Try  Again</b></button>
+        </a> 
+      </center>
+    </div>
+</div>
+
+{% endblock %}

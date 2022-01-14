@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<script type="text/javascript">
+	var element  = document.getElementsByClassName('active')[0];
+	element.classList.remove("active");
+	link1.classList.add("active")
+</script>
+<div>
+	<section class="banner_w3lspvt" id="home">
+		<div class="banner-top">
+			<div class="overlay">
+				<div class="w3layouts-banner-info text-center">
+					<h3>Cropy</h3>
+					<h4 class="mx-auto my-4">One Stop Shop for farming</h4><br>
+					<h4 class="mx-auto my-4">
+						<strong> Here are some features we provide :-</strong>
+						<br><br>
+						1. What crop to plant? 
+						<br>
+						2. What fertilizer to use?
+					</h4>
+				</div>
+			</div>
+		</div>
+	</section>
+
+  
+
+	<!-- Services -->
+
+	<section>
+		<div class="container py-4">
+			<h3 class="text-center mb-4"> Our Services</h3>
+
+			<div class="row center col d-flex justify-content-center">
+				<!-- card1 -->
+				<div class="card mx-3 shadow-card mt-2 " style="width: 18rem;">
+				 <a href="{{ url_for('crop_recommend') }}"> 
+				  <img class="card-img-top card-img" src="{{ url_for('static', filename='images/crops.jpg') }}" alt="Card image cap">
+				 
+				  <div class="card-body">
+				  	<h5 class="card-title">Crop Recommendation</h5>
+				    <p class="card-text">Get crop recommendation best suited for cultivation</p>
+				  </div>
+				  </a>
+				</div>
+				<!-- card2 -->
+				<div class="card mx-3 shadow-card mt-2" style="width: 18rem;">
+				 <a href="{{ url_for('fertilizer_recommendation') }}">
+				  <img class="card-img-top card-img" src="{{ url_for('static', filename='images/fertilizer.jpg') }}" alt="Card image cap">
+				 
+				  <div class="card-body">
+				  	<h5 class="card-title">Fertilizer Recommendation</h5>
+				    <p class="card-text">Get fertilizer recommendation best suited for your soil</p>
+				  </div>
+				 </a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- //Services -->
+
+</div>
+
+{% endblock %}
