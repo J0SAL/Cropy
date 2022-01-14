@@ -58,11 +58,6 @@ def home():
     title = 'Cropy - Home'
     return render_template('index.html', title=title)
 
-#render try again
-@ app.route('/na')
-def tryagain():
-    title = 'page not found'
-    return render_template('try-again.html', title=title)
 
 # render crop recommendation form page
 
