@@ -1,0 +1,73 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+  #output-image{
+    max-height: 50vh;
+    max-width: 50vh;
+  }
+
+  #input-file{
+  }
+  .center {
+    margin: auto;
+    width: 50%;
+    border: dotted;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+  }
+</style>
+
+<script type="text/javascript">
+  var element  = document.getElementsByClassName('active')[0];
+  element.classList.remove("active");
+  link4.classList.add("active")
+</script>
+
+<div class="form-div">
+  <h2 class="text-center mt-5"><b> Find Disease Caught by your plants </b></h2>
+  <form method="POST" enctype=multipart/form-data>
+
+    <div class="form-group row  my-3 justify-content-center">
+      <div class="col-md-4 text-center">
+        <input
+          type="file"
+          name="file"
+          id="input-file"
+          onchange="preview_image(event)"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group row my-3 mx-4 justify-content-center">
+      <div class="col-md-4 px-1">
+        <img id="output-image" class="rounded mx-auto d-block" accept="image/*"/>
+      </div>
+    </div>
+
+   <div class="pb-2 mx-4 row justify-content-center">
+    <div class="col-md-3 mb-2 px-1">
+      <button
+        type="submit"
+        class="btn btn-primary w-100">
+        Predict
+      </button>
+    </div>
+  </div>
+  </form> 
+</div>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+
+{% endblock %}
