@@ -1,0 +1,19 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+<style>
+    li{
+        padding-top: 2%;
+    }
+</style>
+
+<div class="result-body">
+    <div class="result-div">
+        <center><img id="result-img"src="{{ url_for('static', filename='images/logo_cropy1.png') }}"></center>
+        <center>
+          <p>Accuracy <b>{{ prediction.confidence }} %</b>
+        </center>
+        {{ prediction.data }}
+    </div>
+</div>
+{% endblock %}

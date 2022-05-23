@@ -16,9 +16,11 @@
 					<h4 class="mx-auto my-4">
 						<strong> Here are some features we provide :-</strong>
 						<br><br>
-						1. What crop to plant? 
+						1. What Crop to plant? 
 						<br>
 						2. What fertilizer to use?
+						<br>
+						3. Which disease is affecting your Crop?
 					</h4>
 				</div>
 			</div>
@@ -53,6 +55,17 @@
 				  <div class="card-body">
 				  	<h5 class="card-title">Fertilizer Recommendation</h5>
 				    <p class="card-text">Get fertilizer recommendation best suited for your soil</p>
+				  </div>
+				 </a>
+				</div>
+				<!-- card3 -->
+				<div class="card mx-3 shadow-card mt-2" style="width: 18rem;">
+				 <a href="{{ url_for('disease_prediction') }}">
+				  <img class="card-img-top card-img" src="{{ url_for('static', filename='images/leaf.jpg') }}" alt="Card image cap">
+				 
+				  <div class="card-body">
+				  	<h5 class="card-title">Disease Prediction</h5>
+				    <p class="card-text">Get Name of disease with model's confidence and some suggestions to cure it</p>
 				  </div>
 				 </a>
 				</div>
