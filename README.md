@@ -41,7 +41,7 @@ Deployed at: https://crop-y.herokuapp.com/
     - <img src="https://user-images.githubusercontent.com/52382282/169878816-15ced7ab-be87-4859-aae7-ab0fcb85b155.png" alt="drawing" width="800"/>
     
     - Input form for disease prediction
-    - <img src="(https://user-images.githubusercontent.com/52382282/169879089-fcd7104f-3978-47c4-9014-bb483af55f4e.png" alt="drawing" width="800"/>
+    - <img src="https://user-images.githubusercontent.com/52382282/169879089-fcd7104f-3978-47c4-9014-bb483af55f4e.png" alt="drawing" width="800"/>
 
 2. Predictions/Recommendation Pages
     - Customized Result pages which deliver the output
