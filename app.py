@@ -24,8 +24,11 @@ model_path = 'models/randomf.pkl'
 model = pickle.load(open(model_path,'rb'))
 
 
-MODEL = tf.keras.models.load_model("models/leaf_disease_1")
+dl_model_path = URL = 'models/tflite_quant_model.tflite'
+tflite_interpreter = tf.lite.Interpreter(model_path=dl_model_path)
 
+
+# MODEL = tf.keras.models.load_model("models/leaf_disease_1")
 
 # Loading Weather data from OpenWeatherAPI
 
@@ -231,10 +234,19 @@ def disease_prediction():
             image = tf.image.resize(image, [256,256]).numpy()
 
             image = np.expand_dims(image, 0) # 1d to 2d
-            predictions = MODEL.predict(image)
+            
+            input_details = tflite_interpreter.get_input_details()
+            output_details = tflite_interpreter.get_output_details()
+            tflite_interpreter.allocate_tensors()
+
+            tflite_interpreter.set_tensor(input_details[0]['index'], image)
+            tflite_interpreter.invoke()
+            predictions = tflite_interpreter.get_tensor(output_details[0]['index'])
 
             predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
             confidence = round(np.max(predictions[0])*100,2) # 0 because provided only one image
+
+            # predictions = MODEL.predict(image)
 
             data = {
                 'confidence': float(confidence),
